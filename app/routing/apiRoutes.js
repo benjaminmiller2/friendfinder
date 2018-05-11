@@ -42,7 +42,10 @@ app.post('/api/friends', function(req, res){
 
     //Assigns the friend from the friends list to the matched friend variable
     //based on the matchScore
-    matchedFriend = friendList[matchScore]
-})
+    matchedFriend = friendList[matchScore];
+    res.json(matchedFriend);
+
+    friendList.push(req.body)
+;})
 };
 

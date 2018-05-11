@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+
 </head>
 <body>
    
@@ -23,12 +23,12 @@
             <h3>About You</h3>
             <div class="form-group">
                 <label>Name (Required)</label>
-                <input type="text" class="form-control" id="newFriendName" placeholder="New Friend's Name">
+                <input type="text" class="form-control required" id="newFriendName" placeholder="New Friend's Name">
             </div>
 
             <div class="form-group">
                 <label>Link to Photo Image (Required)</label>
-                <input type="text" class="form-control" id="newFriendPhoto" placeholder="New Friends's Image">
+                <input type="text" class="form-control required" id="newFriendPhoto" placeholder="New Friends's Image">
             </div>
         </form>
         <hr>
@@ -40,7 +40,7 @@
                     <h5 class="text-muted"><em>Mayonnaise fit for human consumption.</em></h5>
                 </div>
 
-                <select class="custom-select col-2" id="inputGroupSelect01">
+                <select class="custom-select col-2 required" id="q1">
                   <option selected>Choose...</option>
                   <option value="1">1 (Stongly Disagree)</option>
                   <option value="2">2</option>
@@ -58,7 +58,7 @@
                         <h5 class="text-muted"><em>Game of Thrones is the greatest show on television.</em></h5>
                     </div>
                     
-                    <select class="custom-select col-2" id="inputGroupSelect01">
+                    <select class="custom-select col-2 required" id="q2">
                       <option selected>Choose...</option>
                       <option value="1">1 (Stongly Disagree)</option>
                       <option value="2">2</option>
@@ -76,7 +76,7 @@
                             <h5 class="text-muted"><em>Trump is a fine president.</em></h5>
                         </div>
                         
-                        <select class="custom-select col-2" id="inputGroupSelect01">
+                        <select class="custom-select col-2 required" id="q3">
                           <option selected>Choose...</option>
                           <option value="1">1 (Stongly Disagree)</option>
                           <option value="2">2</option>
@@ -94,7 +94,7 @@
                                 <h5 class="text-muted"><em>The toilet paper role should face forward.</em></h5>
                             </div>
                             
-                            <select class="custom-select col-2" id="inputGroupSelect01">
+                            <select class="custom-select col-2 required" id="q4">
                               <option selected>Choose...</option>
                               <option value="1">1 (Stongly Disagree)</option>
                               <option value="2">2</option>
@@ -112,7 +112,7 @@
                                     <h5 class="text-muted"><em>"Facebook" can be used as a verb.</em></h5>
                                 </div>
                                 
-                                <select class="custom-select col-2" id="inputGroupSelect01">
+                                <select class="custom-select col-2 required" id="q5">
                                   <option selected>Choose...</option>
                                   <option value="1">1 (Stongly Disagree)</option>
                                   <option value="2">2</option>
@@ -130,7 +130,7 @@
                                         <h5 class="text-muted">Pluto is not a planet.</h5>
                                     </div>
                                     
-                                    <select class="custom-select col-2" id="inputGroupSelect01">
+                                    <select class="custom-select col-2 required" id="q6">
                                       <option selected>Choose...</option>
                                       <option value="1">1 (Stongly Disagree)</option>
                                       <option value="2">2</option>
@@ -148,7 +148,7 @@
                                             <h5 class="text-muted">The Brits are right to use the word "maths".</h5>
                                         </div>
                                         
-                                        <select class="custom-select col-2" id="inputGroupSelect01">
+                                        <select class="custom-select col-2 required" id="q7">
                                           <option selected>Choose...</option>
                                           <option value="1">1 (Stongly Disagree)</option>
                                           <option value="2">2</option>
@@ -166,7 +166,7 @@
                                                 <h5 class="text-muted">Michael Bay is an underrated director.</h5>
                                             </div>
                                             
-                                            <select class="custom-select col-2" id="inputGroupSelect01">
+                                            <select class="custom-select col-2 required" id="q8">
                                               <option selected>Choose...</option>
                                               <option value="1">1 (Stongly Disagree)</option>
                                               <option value="2">2</option>
@@ -184,7 +184,7 @@
                                                     <h5 class="text-muted">Harry should have ended up with Hermione.</h5>
                                                 </div>
                                                 
-                                                <select class="custom-select col-2" id="inputGroupSelect01">
+                                                <select class="custom-select col-2 required" id="q9">
                                                   <option selected>Choose...</option>
                                                   <option value="1">1 (Stongly Disagree)</option>
                                                   <option value="2">2</option>
@@ -202,7 +202,7 @@
                                                         <h5 class="text-muted">Orange juice should have pulp in it.</h5>
                                                     </div>
                                                     
-                                                    <select class="custom-select col-2" id="inputGroupSelect01">
+                                                    <select class="custom-select col-2 required" id="q10">
                                                       <option selected>Choose...</option>
                                                       <option value="1">1 (Stongly Disagree)</option>
                                                       <option value="2">2</option>
@@ -213,32 +213,88 @@
                                                   </div>
 
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button id="submitButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Submit!
       </button>
       
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+<div id='modalBox' class='modal'>
+    <div class='modal-content'>
+        <h4>Your New Friend! Rejoice!</h4>
+        <h5 id='matchName'></h5>
+        <img id='matchphoto' src='' alt='No Image' width=250px>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-action modal-close'>Done</a>
+    </div>
+</div>
 
     </div>
-    
+
+    <script>
+    $(document).ready(function(){
+       //To check that each field has been filled
+function validate(){
+    let valid = true;
+    $('.required').each(function(){
+        if($(this).val() === ''){
+            valid = false;
+        }
+    })
+    return valid
+}; 
+
+$('#submitButton').on('click', function(){
+            validate().then(function(){
+                if(validate() === true){
+                    let userInput = {
+                        name: $('#newFriendName').val().trim(),
+                        photo: $('#newFriendPhoto').val().trim(),
+                        scores:[
+                            $('#q1').val().trim(),
+                            $('#q2').val().trim(),
+                            $('#q3').val().trim(),
+                            $('#q4').val().trim(),
+                            $('#q5').val().trim(),
+                            $('#q6').val().trim(),
+                            $('#q7').val().trim(),
+                            $('#q8').val().trim(),
+                            $('#q9').val().trim(),
+                            $('#q10').val().trim(),
+                        ]
+                    };
+
+                    let url = window.locatin.origin;
+
+                    $.post(url + '/api/friends', userInput, function(data){
+                        $('#matchName').text(data.name);
+                        $('#matchPhoto').attr('src', data.photo)
+                    });
+
+                    $('.modal').modal();
+
+                    $('#q1').val('');
+                    $('#q2').val('');
+                    $('#q3').val('');
+                    $('#q4').val('');
+                    $('#q5').val('');
+                    $('#q6').val('');
+                    $('#q7').val('');
+                    $('#q8').val('');
+                    $('#q9').val('');
+                    $('#q10').val('');
+                }else{
+                    alert("Fill in all fields before proceeding.")
+                }
+            })
+        });
+        
+
+
+    })
+
+
+
+    </script>
 </body>
 </html>
