@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+
 </head>
 <body>
    
@@ -41,7 +43,7 @@
                 </div>
 
                 <select class="custom-select col-2 required" id="q1">
-                  <option selected>Choose...</option>
+                    <option value="">Choose...</option>
                   <option value="1">1 (Stongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -59,7 +61,7 @@
                     </div>
                     
                     <select class="custom-select col-2 required" id="q2">
-                      <option selected>Choose...</option>
+                        <option value="">Choose...</option>
                       <option value="1">1 (Stongly Disagree)</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -77,7 +79,7 @@
                         </div>
                         
                         <select class="custom-select col-2 required" id="q3">
-                          <option selected>Choose...</option>
+                            <option value="">Choose...</option>
                           <option value="1">1 (Stongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -95,7 +97,7 @@
                             </div>
                             
                             <select class="custom-select col-2 required" id="q4">
-                              <option selected>Choose...</option>
+                                <option value="">Choose...</option>
                               <option value="1">1 (Stongly Disagree)</option>
                               <option value="2">2</option>
                               <option value="3">3</option>
@@ -113,7 +115,7 @@
                                 </div>
                                 
                                 <select class="custom-select col-2 required" id="q5">
-                                  <option selected>Choose...</option>
+                                    <option value="">Choose...</option>
                                   <option value="1">1 (Stongly Disagree)</option>
                                   <option value="2">2</option>
                                   <option value="3">3</option>
@@ -131,7 +133,7 @@
                                     </div>
                                     
                                     <select class="custom-select col-2 required" id="q6">
-                                      <option selected>Choose...</option>
+                                        <option value="">Choose...</option>
                                       <option value="1">1 (Stongly Disagree)</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>
@@ -149,7 +151,7 @@
                                         </div>
                                         
                                         <select class="custom-select col-2 required" id="q7">
-                                          <option selected>Choose...</option>
+                                            <option value="">Choose...</option>
                                           <option value="1">1 (Stongly Disagree)</option>
                                           <option value="2">2</option>
                                           <option value="3">3</option>
@@ -167,7 +169,7 @@
                                             </div>
                                             
                                             <select class="custom-select col-2 required" id="q8">
-                                              <option selected>Choose...</option>
+                                                <option value="">Choose...</option>
                                               <option value="1">1 (Stongly Disagree)</option>
                                               <option value="2">2</option>
                                               <option value="3">3</option>
@@ -185,7 +187,7 @@
                                                 </div>
                                                 
                                                 <select class="custom-select col-2 required" id="q9">
-                                                  <option selected>Choose...</option>
+                                                  <option value="">Choose...</option>
                                                   <option value="1">1 (Stongly Disagree)</option>
                                                   <option value="2">2</option>
                                                   <option value="3">3</option>
@@ -203,7 +205,7 @@
                                                     </div>
                                                     
                                                     <select class="custom-select col-2 required" id="q10">
-                                                      <option selected>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                       <option value="1">1 (Stongly Disagree)</option>
                                                       <option value="2">2</option>
                                                       <option value="3">3</option>
@@ -212,89 +214,72 @@
                                                     </select>
                                                   </div>
 
-            <!-- Button trigger modal -->
-<button id="submitButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Submit!
-      </button>
-      
-      <!-- Modal -->
-<div id='modalBox' class='modal'>
-    <div class='modal-content'>
-        <h4>Your New Friend! Rejoice!</h4>
-        <h5 id='matchName'></h5>
-        <img id='matchphoto' src='' alt='No Image' width=250px>
-    </div>
-    <div class='modal-footer'>
-        <a href='#!' class='modal-action modal-close'>Done</a>
-    </div>
+<!-- Button -->
+<button type="submit" class="btn btn-primary btn-lg btn-block" id="submitButton">Submit</button>
+
+<div>
+    <h1>Your new friend is...</h1>
+    <p id="matchName"></p>
 </div>
 
     </div>
 
-    <script>
-    $(document).ready(function(){
-       //To check that each field has been filled
-function validate(){
-    let valid = true;
-    $('.required').each(function(){
-        if($(this).val() === ''){
-            valid = false;
-        }
-    })
-    return valid
-}; 
-
-$('#submitButton').on('click', function(){
-            validate().then(function(){
-                if(validate() === true){
-                    let userInput = {
-                        name: $('#newFriendName').val().trim(),
-                        photo: $('#newFriendPhoto').val().trim(),
-                        scores:[
-                            $('#q1').val().trim(),
-                            $('#q2').val().trim(),
-                            $('#q3').val().trim(),
-                            $('#q4').val().trim(),
-                            $('#q5').val().trim(),
-                            $('#q6').val().trim(),
-                            $('#q7').val().trim(),
-                            $('#q8').val().trim(),
-                            $('#q9').val().trim(),
-                            $('#q10').val().trim(),
-                        ]
-                    };
-
-                    let url = window.locatin.origin;
-
-                    $.post(url + '/api/friends', userInput, function(data){
-                        $('#matchName').text(data.name);
-                        $('#matchPhoto').attr('src', data.photo)
-                    });
-
-                    $('.modal').modal();
-
-                    $('#q1').val('');
-                    $('#q2').val('');
-                    $('#q3').val('');
-                    $('#q4').val('');
-                    $('#q5').val('');
-                    $('#q6').val('');
-                    $('#q7').val('');
-                    $('#q8').val('');
-                    $('#q9').val('');
-                    $('#q10').val('');
-                }else{
-                    alert("Fill in all fields before proceeding.")
-                }
-            })
-        });
+<script>
+$(document).ready(function() {
+    
+    $("#submitButton").on("click", function(){
         
+        // Confirm that all questions have been answered
+    	function validate() {
+		  var valid = true;
+		  $('.required').each(function() {
+		    if ( $(this).val() === '' )
+		        valid = false;
+		  });
 
+		  return valid;
+		}
+		// If all required fields are filled
+		if (validate() == true)
+		{
+			// Create an object for the user input
+	    	var userInput = {
+	    		name: $("#newFriendName").val(),
+	    		photo: $("#newFriendPhoto").val(),
+                scores: [
+                $("#q1").val(), 
+                $("#q2").val(), 
+                $("#q3").val(), 
+                $("#q4").val(), 
+                $("#q5").val(), 
+                $("#q6").val(), 
+                $("#q7").val(), 
+                $("#q8").val(), 
+                $("#q9").val(), 
+                $("#q10").val(), 
+            ]
+	    	}
+	    	// Grab the URL of the website
+	    	var currentURL = window.location.origin;
+            
+            // Post the data to the friends API. 
+	    	$.post(currentURL + "/api/friends", userInput, function(data){
+                
+                // Display the match's name.
+                $("#matchName").text(data.name);
+                //alert(data.name)
+                console.log(data.name);
 
-    })
-
-
-
-    </script>
+	    	});
+		}
+		else
+		{
+			alert("You must answer all of the questions before proceeding!");
+		}
+    	
+    	return false;
+    });
+})
+</script>
 </body>
 </html>

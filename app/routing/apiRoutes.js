@@ -1,51 +1,69 @@
 //Dependancies
 let path = require('path');
-let friends = require('../data/friends.js');
+let friends = require('../data/friends');
 
-//Export routes to server.js
+
+// ===============================================================================
+// ROUTING
+// ===============================================================================
+
 module.exports = function(app){
 
-    //To data
-    app.get('/api/friends', function(req, res){
-        res.json(friends);
-    });
+	app.get('/api/friends', function(req, res){
+		res.json(friends);
+	});
 
-app.post('/api/friends', function(req, res){
 
-    //Assigns input from user on the front end to variables
-    //for use by the server
-    let userScores = req.body.scores;
-    let scoreArray = [];
-    let matchScore = 0;
-    let matchedFriend;
+	// API POST Requests
+	// Below code handles when a user submits a form and thus submits data to the server.
+	// In each of the below cases, when a user submits form data (a JSON object)
+	// ...the JSON is pushed to the appropriate Javascript array
+	// ---------------------------------------------------------------------------
 
-    //Loop through the friends list in the data 
-    for(let i = 0; i < friendList.length; i++){
-        let difference = 0;
+	app.post('/api/friends', function(req, res){
 
-        //Loop through each of the friend's scores 
-        //Then, calculate the absolute difference from the user's input
-        for(let j = 0; j < userScores.length; j++){
-            difference += (Math.abs(parseInt(userScore[j]) - parseInt(friendList[i].scores[j])));
-        }
-    //Push the score difference into an array for comparison later
-    scoreArray.push(difference);
-    };
-    
-    //Compare the scores in the scoreArray to the match value (0)
-    //if they are equal or less than 0, then they become the new match value
-    for(let k = 0; k < scoreArray.length; k++){
-        if(scoreArray[k] <= scoreArray[matchScore]){
-            matchScore = k;
-        };
-    };
+        //Create an object to store the match values from the friend array
+		let match = {
+			name: "",
+			photo: "",
+			matchDifference: 1000
+		};
 
-    //Assigns the friend from the friends list to the matched friend variable
-    //based on the matchScore
-    matchedFriend = friendList[matchScore];
-    res.json(matchedFriend);
+		// Set variables using the user's input.
+		let userInput 	= req.body;
+		let userName 	= userInput.name;
+		let userPhoto 	= userInput.photo;
+		let userScores 	= userInput.scores;
+		let difference = 0;
 
-    friendList.push(req.body)
-;})
-};
+		// Loop through all the friend objects in the friends array, then loop through their scores. 
+		for  (let i=0; i< friends.length; i++) {
 
+			console.log(friends[i].name);
+			difference = 0;
+
+			for (let j=0; j< friends[i].scores[j]; j++){
+
+				difference += (Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j])));
+
+				// When the difference value is lower than the friend values
+				if (difference <= match.matchDifference){
+
+					// Set the match object with new values 
+					match.name = friends[i].name;
+					match.photo = friends[i].photo;
+					match.matchDifference = difference;
+				}
+			}
+		}
+
+		//Push the user's input into the friends array
+		friends.push(userInput);
+
+		// Return a JSON with the user's friend match. 
+        res.json(match);
+        console.log(match)
+
+	});
+
+}

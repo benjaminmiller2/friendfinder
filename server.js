@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 
 //Create connection to routes
-require(path.join(__dirname, './app/routing/apiRoutes'))(app);
-require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
+require(path.join(__dirname, './app/routing/apiRoutes.js'))(app);
+require(path.join(__dirname, './app/routing/htmlRoutes.js'))(app);
 
 //Confirm server functionality
 app.listen(PORT, function(){

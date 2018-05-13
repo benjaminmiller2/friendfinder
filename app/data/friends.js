@@ -1,4 +1,4 @@
-let friendList = [
+let friends = [
     {
         "name": "Michael Scott",
         "photo": "https://en.wikipedia.org/wiki/Michael_Scott_(The_Office)#/media/File:MichaelScott.png",
@@ -256,3 +256,5 @@ let friendList = [
         ]
     },
 ]
+
+module.exports = friends;
